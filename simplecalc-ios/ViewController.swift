@@ -24,6 +24,9 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var outputLabel: UILabel!
     
+    var operationLine = ""
+    var operationHistory:[String] = []
+    
     var runningNumber = ""
     var lhs = ""
     var rhs = ""
@@ -59,6 +62,7 @@ class ViewController: UIViewController {
         runningTotal = 0.0
         currentOperation = .Null
         outputLabel.text = "0"
+        operationLine = ""
     }
     
     @IBAction func decimalPressed(_ sender: RoundButton) {
@@ -70,6 +74,7 @@ class ViewController: UIViewController {
     
     @IBAction func equalsPressed(_ sender: RoundButton) {
         operation(operation: currentOperation)
+        operationHistory.append(operationLine)
     }
     
     @IBAction func plusPressed(_ sender: RoundButton) {
@@ -109,21 +114,28 @@ class ViewController: UIViewController {
             if runningNumber != "" {
                 rhs = runningNumber
                 runningNumber = ""
-            
+                
                 if currentOperation == .add {
                     result = "\(Double(lhs)! + Double(rhs)!)"
+                    operationLine += " + " + rhs + " = " + result
                 } else if currentOperation == .subtract {
                     result = "\(Double(lhs)! - Double(rhs)!)"
+                    operationLine += " - " + rhs + " = " + result
                 } else if currentOperation == .multiply {
                     result = "\(Double(lhs)! * Double(rhs)!)"
+                    operationLine += " x " + rhs + " = " + result
                 } else if currentOperation == .divide {
                     result = "\(Double(lhs)! / Double(rhs)!)"
+                    operationLine += " ÷ " + rhs + " = " + result
                 } else if currentOperation == .mod {
                     result = "\(Double(lhs)!.truncatingRemainder(dividingBy: Double(rhs)!))"
+                    operationLine += " % " + rhs + " = " + result
                 } else if currentOperation == .count {
+                    operationLine += " Cnt " + rhs + " = " + result
                     count += 1
                     result = "\(count)"
                 } else if currentOperation == .avg {
+                    operationLine += " Avg " + rhs + " = " + result
                     count += 1
                     if (runningTotal == 0) {
                         runningTotal = (Double(lhs))! + (Double(rhs))!
@@ -141,6 +153,7 @@ class ViewController: UIViewController {
             currentOperation = operation
         } else {
             lhs = runningNumber
+            operationLine = runningNumber
             runningNumber = ""
             currentOperation = operation
             
@@ -154,9 +167,15 @@ class ViewController: UIViewController {
                     result = "\(Int(Double(result)!))"
                 }
                 outputLabel.text = result
+                operationLine += " Fct " + result
             }
             
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let historyView = segue.destination as! historyViewController
+        historyView.operationHistory = operationHistory
     }
 }
 

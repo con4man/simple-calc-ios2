@@ -15,6 +15,7 @@
 		9DC2F9D220257D3C000B29D2 /* simplecalc_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2F9D120257D3C000B29D2 /* simplecalc_iosTests.swift */; };
 		9DC2F9DD20257D3C000B29D2 /* simplecalc_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2F9DC20257D3C000B29D2 /* simplecalc_iosUITests.swift */; };
 		9DC2F9EB20257FE9000B29D2 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2F9EA20257FE9000B29D2 /* RoundButton.swift */; };
+		9DF339DE20267EE100C5B91E /* historyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF339DD20267EE100C5B91E /* historyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		9DC2F9DC20257D3C000B29D2 /* simplecalc_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simplecalc_iosUITests.swift; sourceTree = "<group>"; };
 		9DC2F9DE20257D3C000B29D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DC2F9EA20257FE9000B29D2 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		9DF339DD20267EE100C5B91E /* historyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = historyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				9DC2F9BC20257D3C000B29D2 /* AppDelegate.swift */,
 				9DC2F9BE20257D3C000B29D2 /* ViewController.swift */,
 				9DC2F9C020257D3C000B29D2 /* Main.storyboard */,
+				9DF339DD20267EE100C5B91E /* historyViewController.swift */,
 				9DC2F9C320257D3C000B29D2 /* Assets.xcassets */,
 				9DC2F9C520257D3C000B29D2 /* LaunchScreen.storyboard */,
 				9DC2F9C820257D3C000B29D2 /* Info.plist */,
@@ -265,6 +268,7 @@
 				9DC2F9EB20257FE9000B29D2 /* RoundButton.swift in Sources */,
 				9DC2F9BF20257D3C000B29D2 /* ViewController.swift in Sources */,
 				9DC2F9BD20257D3C000B29D2 /* AppDelegate.swift in Sources */,
+				9DF339DE20267EE100C5B91E /* historyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
