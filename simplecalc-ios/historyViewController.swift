@@ -22,10 +22,6 @@ class historyViewController: UIViewController {
                 label.text = operationHistory[index]
                 scrollView.addSubview(label)
             }
-            
-//            let label = UILabel(frame: CGRect(x: 50, y: index * 25 + 50, width: 300, height: 40))
-//            label.text = wordBank[index]
-//            view.addSubview(label)
         }
         // Do any additional setup after loading the view, typically from a nib.
     }

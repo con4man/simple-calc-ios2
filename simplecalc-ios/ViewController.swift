@@ -79,11 +79,6 @@ class ViewController: UIViewController {
         } else if lhs != "" {
             operationLine += " = " + lhs
         }
-//        if currentOperation == .avg || currentOperation == .count {
-//            operationLine += " = " + result
-//        } else {
-//            operationLine += result
-//        }
         operationHistory.append(operationLine)
     }
     
