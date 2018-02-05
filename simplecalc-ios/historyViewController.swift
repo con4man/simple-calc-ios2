@@ -6,7 +6,7 @@
 //  Copyright © 2018 Connor Hawthorne. All rights reserved.
 //
 
-import Foundation
+//import Foundation
 import UIKit
 class historyViewController: UIViewController {
     
@@ -16,10 +16,16 @@ class historyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for index in 0...operationHistory.count - 1 {
-            let label = UILabel(frame: CGRect(x: 50, y: index * 25 + 50, width: 300, height: 40))
-            label.text = operationHistory[index]
-            scrollView.addSubview(label)
+        if operationHistory.count != 0 {
+            for index in 0...operationHistory.count - 1 {
+                let label = UILabel(frame: CGRect(x: 50, y: index * 25 + 50, width: 300, height: 40))
+                label.text = operationHistory[index]
+                scrollView.addSubview(label)
+            }
+            
+//            let label = UILabel(frame: CGRect(x: 50, y: index * 25 + 50, width: 300, height: 40))
+//            label.text = wordBank[index]
+//            view.addSubview(label)
         }
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -31,7 +37,7 @@ class historyViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let calculatorView = segue.destination as! ViewController
-        calculatorView.operationHistory = operationHistory
+        calculatorView.operationHistory = self.operationHistory
     }
     
 }
